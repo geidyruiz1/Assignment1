@@ -1,10 +1,4 @@
 {
-  "name": "Assignment1 Team Project",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "nodemon ./bin/www"
-  },
   "dependencies": {
     "bootstrap": "^4.5.2",
     "cookie-parser": "~1.4.4",
@@ -18,5 +12,11 @@
     "nodemon": "^2.0.4",
     "popper.js": "^1.16.1",
     "save": "^2.4.0"
-  }
+  },
+  "name": "Assignment1 Team Products",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "version": "0.0.0"
 }
