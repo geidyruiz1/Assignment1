@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 
 //Reference the task model
-const Task = require('../models/task')
+const Product = require('../models/product')
 
 /* GET Task Index view. */
 //use the task model to fetch a lists of task and pass these to view for display
@@ -13,15 +13,15 @@ const Task = require('../models/task')
 
 router.get('/', function (req, res, next) {
 
-    Task.find((err, tasks) => {
+    Product.find((err, products) => {
         if (err) {
             console.log(err)
             res.end(err)
         }
         else {
-            res.render('tasks/index',
+            res.render('products/index',
                 {
-                    tasks: tasks
+                    products: products
                 })
         }
     })
@@ -29,21 +29,22 @@ router.get('/', function (req, res, next) {
 
 //GET task add view
 router.get('/add', (req, res, next) => {
-    res.render('tasks/add')
+    res.render('products/add')
 })
 //POST tasks / add for submission
 router.post('/add', (req, res, next) => {
     //use Mongoose to try to save a new object
-    Task.create({
+    Product.create({
         name: req.body.name,
-        priority: req.body.priority
-    }, (err, tasks) => {
+        quantity: req.body.quantity,
+        price: req.body.price
+    }, (err, products) => {
         if (err) {
             console.log(err)
             res.end(err)
         }
         else {
-            res.redirect('/tasks')
+            res.redirect('/products')
         }
     })
 })
@@ -52,58 +53,59 @@ router.get('/delete/:_id', (req, res, next) => {
     //store the selected id in a local variable
     var _id = req.params._id;
     //Use Mongoose to delete the selected document from the DB
-    Task.remove({ _id: _id }, (err) => {
+    Product.remove({ _id: _id }, (err) => {
         if (err) {
             console.log(err)
             res.end(err)
         }
         else {
-            res.redirect('/tasks')
+            res.redirect('/products')
         }
 
     })  
 })
-//GET task/ edit/.. populate edit for with my existing task values
-//GET task/delete/ - colon in the path represents a URL parameter
+//GET product/ edit/.. populate edit for with my existing task values
+//GET product/delete/ - colon in the path represents a URL parameter
 router.get('/edit/:_id', (req, res, next) => {
     //store the selected id in a local variable
     var _id = req.params._id;
     //use this selected id to look up the matching document
-    Task.findById(_id,(err, tasks) => {
+    Product.findById(_id,(err, products) => {
         if (err) {
             console.log(err)
             res.end(err)
         }
         else {
-            res.render('tasks/edit',
+            res.render('products/edit',
                 {
-                    tasks: tasks
+                    products: products
                 })
         }
     })
 })
-//POST  task/ edit/;_id -> update selected document
+//POST  product/ edit/;_id -> update selected document
 router.post('/edit/:_id', (req, res, next) => {
     var _id = req.params._id
     //parse checkbox to bool
-    var complete = false
-    if (req.body.complete == "on")
-        complete = true
-    console.log('Complete: ' + req.body.complete)
+    var imported = false
+    if (req.body.imported == "on")
+        imported = true
+    console.log('Imported: ' + req.body.imported)
     //instatiate a task Object with the new values from the submission
-    var task = new Task({
+    var product = new Product({
         _id: _id,
         name: req.body.name,
-        priority: req.body.priority,
-        complete: complete
+        quantity: req.body.quantity,
+        imported: imported,
+        price: req.body.price
     })
-    Task.update({ _id: _id },task, (err) => {
+    Product.update({ _id: _id },product, (err) => {
         if (err) {
             console.log(err)
             res.end(err)
         }
         else {
-            res.redirect('/tasks')
+            res.redirect('/products')
         }
     })
 })

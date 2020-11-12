@@ -1,7 +1,7 @@
 // add mangoose
 const mongoose = require('mongoose')
 
-const taskSchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
 	{
 		name:
 		{
@@ -9,11 +9,13 @@ const taskSchema = new mongoose.Schema(
 			required: 'Name is required',
 			trim: true
 		},
-		complete: {
+		imported: {
 			type: Boolean,
 			default: false
 		},
-		priority: Number
+		quantity: Number,
+
+		price: Number
 	})
 // make this public
-module.exports = mongoose.model('Task',taskSchema)
+module.exports = mongoose.model('Product',productSchema)

@@ -1,0 +1,24 @@
+<h1>Tasks Manager</h1>
+<a href="/products/add">Add a new task</a>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Imported</th>
+        <th>Actions</th>
+    </tr>
+
+    {{#each products}}
+<tr>
+    <td>{{this.name}}</td>
+    <td>{{this.quantity}}</td>
+    <td>{{this.price}}</td>
+    <td>{{this.imported}}</td>
+    <td>
+        <a href="/products/edit/{{this._id}}">Edit | </a>
+        <a href="/products/delete/{{this._id}}" class="test-danger delete"> Delete</a>
+    </td>
+</tr>
+    {{/each}}
+</table>

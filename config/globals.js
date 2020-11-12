@@ -2,5 +2,7 @@
 
 module.exports =
 {
-        'db': 'mongodb+srv://GeidyRuiz:123@clustermanager.1eeyb.mongodb.net/tasks'
+    //'db': 'mongodb+srv://GeidyRuiz:123@clustermanager.1eeyb.mongodb.net/tasks'
+    'db': 'mongodb+srv://GeidyRuiz:123@cluster0.hz8pl.mongodb.net/products'
+   
 }

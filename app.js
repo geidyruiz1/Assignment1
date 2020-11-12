@@ -7,7 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 //Add new Task controller
-var tasksRouter = require('./routes/tasks')
+var tasksRouter = require('./routes/products')
 
 var app = express();
 
@@ -42,7 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/tasks', tasksRouter);
+app.use('/products', tasksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
