@@ -5,11 +5,21 @@
         <label class="control-label col-md-2">Name: *</label>
         <input name="name" id="name" required value="{{products.name}}" />
     </fieldset>
+
+    <fieldset class="form-group">
+        <label class="control-label col-md-2">Quantity: *</label>
+        <input name="quantity" id="quantity" required value="{{products.quantity}}" />
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label class="control-label col-md-2">Price: *</label>
+        <input name="price" id="price" required value="{{products.price}}" />
+    </fieldset>
     <!--<fieldset class="form-group">
         <label class="control-label col-md-2">Complete: *</label>
         <checkbox name="complete" id="complete" />
     </fieldset>-->
-    <fieldset class="form-group">
+    <!--<fieldset class="form-group">
         <label class="control-label col-md-2">Quantity: *</label>
         <select name="quantity" id="quantity">
             <script>
@@ -21,7 +31,7 @@
                 //display the current counter as the new optiion text
                 option.innerHTML = i = toString()
                 //if the new option matches the task priority mark the option as selected
-                if ({{products.quantity }} == i.toString())
+                if ({{products.quantity}} == i.toString())
         {
             option.selected = true
             //add new <option> element to the <select> object
@@ -30,7 +40,7 @@
             </script>
 
         </select>
-    </fieldset>
+    </fieldset>-->
     <fieldset>
         <label class="control-label col-md-2">Imported: </label>
         {{#if products.imported}}
@@ -39,6 +49,6 @@
         <input type="checkbox" id="imported" name="imported" />
         {{/if}}
     </fieldset>
-    <input type="hidden" name="-id" id="_id" value="{{products._id}}"/>
+    <input type="hidden" name="-id" id="_id" value="{{products._id}}" />
     <button class="col-md-offset-2 btn-primary">Save</button>
 </form>
