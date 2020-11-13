@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
 router.get('/about', (req, res, next) => {
     res.render('about', {
         message1: 'This website allows users to add products and specify the kind of cathegory of the product',
-    message2:'We are a company that offer logistic solutions to manage all the products that a company sells in one platforms'});
+        message2:'We are a company that offer logistic solutions to manage all the products that a company sells in one platforms'});
 });
 
 /* GET projects page. */
