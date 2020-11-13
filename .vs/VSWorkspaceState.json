@@ -2,15 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\bin",
-    "\\config",
     "\\models",
-    "\\public",
-    "\\public\\javascripts",
-    "\\public\\stylesheets",
     "\\routes",
     "\\views",
     "\\views\\products"
   ],
-  "SelectedNode": "\\routes\\index.js",
+  "SelectedNode": "\\views\\products\\add.hbs",
   "PreviewInSolutionExplorer": false
 }
