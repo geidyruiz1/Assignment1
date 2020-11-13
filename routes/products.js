@@ -1,3 +1,10 @@
+//-->Java Scrit Frameworks
+//-->Georgian College
+//-->Geidy Ducuara - 200419082
+//-->Diego Estrada - 200427046
+//-->Application: Product Manager
+//-->Database: MongoDb
+
 //link to the express package
 var express = require('express');
 //instanciestes a new express route to handle http request
