@@ -1,3 +1,5 @@
+///*200419082*/
+
 //link to the express package
 var express = require('express');
 var router = express.Router();
@@ -17,7 +19,7 @@ router.get('/about', (req, res, next) => {
 
 /* GET projects page. */
 router.get('/projects', (req, res, next) => {
-    res.render('projects', { message2: 'Our Staff develop all the necesarry projects to help your company to work better' });
+    res.render('projects', { message2: 'Our Staff will develop all the projects that you need' });
 });
 
 /* GET services page. */

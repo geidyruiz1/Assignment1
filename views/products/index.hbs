@@ -1,6 +1,7 @@
 <h1 align="center">Products</h1>
 <h2>{{message1}}</h2>
-<a href="/products/add">Add a new product</a>
+<a href="/products/add" style="color:black;">Add a new product</a>
+<p></p>
 <div class="table-responsive">
     <table class="table table-striped table-hover">
         <tr>
@@ -18,8 +19,8 @@
             <td>{{this.price}}</td>
             <td>{{this.imported}}</td>
             <td>
-                <a href="/products/edit/{{this._id}}">Edit | </a>
-                <a href="/products/delete/{{this._id}}" class="test-danger delete"> Delete</a>
+                <a style="color:black;" href="/products/edit/{{this._id}}">Edit | </a>
+                <a style="color:black;" href="/products/delete/{{this._id}}" class="test-danger delete"> Delete</a>
             </td>
         </tr>
         {{/each}}
