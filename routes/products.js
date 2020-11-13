@@ -1,15 +1,22 @@
+//-->Java Scrit Frameworks
+//-->Georgian College
+//-->Geidy Ducuara - 200419082
+//-->Diego Estrada - 200427046
+//-->Application: Product Manager
+//-->Database: MongoDb
+
 //link to the express package
 var express = require('express');
 //instanciestes a new express route to handle http request
 var router = express.Router();
 
-//Reference the task model
+//Reference the product model
 const Product = require('../models/product')
 
-/* GET Task Index view. */
-//use the task model to fetch a lists of task and pass these to view for display
+/* GET Product Index view. */
+//use the product model to fetch a lists of task and pass these to view for display
 //if en error occurs, the error parameter will filled
-//if not, the task parameter will be filled with the query result
+//if not, the product parameter will be filled with the query result
 
 router.get('/', function (req, res, next) {
 
@@ -27,11 +34,11 @@ router.get('/', function (req, res, next) {
     })
 })
 
-//GET task add view
+//GET product add view
 router.get('/add', (req, res, next) => {
     res.render('products/add')
 })
-//POST tasks / add for submission
+//POST products / add for submission
 router.post('/add', (req, res, next) => {
     //use Mongoose to try to save a new object
     Product.create({
@@ -48,7 +55,7 @@ router.post('/add', (req, res, next) => {
         }
     })
 })
-//GET task/delete/ - colon in the path represents a URL parameter
+//GET product/delete/ - colon in the path represents a URL parameter
 router.get('/delete/:_id', (req, res, next) => {
     //store the selected id in a local variable
     var _id = req.params._id;
@@ -64,7 +71,7 @@ router.get('/delete/:_id', (req, res, next) => {
 
     })  
 })
-//GET product/ edit/.. populate edit for with my existing task values
+//GET product/ edit/.. populate edit for with my existing product values
 //GET product/delete/ - colon in the path represents a URL parameter
 router.get('/edit/:_id', (req, res, next) => {
     //store the selected id in a local variable
@@ -91,7 +98,7 @@ router.post('/edit/:_id', (req, res, next) => {
     if (req.body.imported == "on")
         imported = true
     console.log('Imported: ' + req.body.imported)
-    //instatiate a task Object with the new values from the submission
+    //instatiate a product Object with the new values from the submission
     var product = new Product({
         _id: _id,
         name: req.body.name,

@@ -6,7 +6,7 @@ var logger = require('morgan');
  
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-//Add new Task controller
+//Add new Product controller
 var tasksRouter = require('./routes/products')
 
 var app = express();
