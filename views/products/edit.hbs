@@ -5,8 +5,7 @@
     Application: Product Manager
     Database: MongoDb
     -->
-<h1 align="center">
-    Edit Product Details</h1align="center">
+<h1 align="center">Edit Product Details</h1>
 
     <form method="post">
         <fieldset class="form-group">
@@ -23,32 +22,7 @@
             <label class="control-label col-md-2">Price: *</label>
             <input name="price" id="price" required value="{{products.price}}" />
         </fieldset>
-        <!--<fieldset class="form-group">
-            <label class="control-label col-md-2">Complete: *</label>
-            <checkbox name="complete" id="complete" />
-        </fieldset>-->
-        <!--<fieldset class="form-group">
-            <label class="control-label col-md-2">Quantity: *</label>
-            <select name="quantity" id="quantity">
-                <script>
-                    //ref the selected element
-                    var quantity = document.getElementById('quantity')
-                    for (var i = 1; i <= 5; i++){
-                        //create a new option inside the select element
-                        var option = document.createElement('option')
-                    //display the current counter as the new optiion text
-                    option.innerHTML = i = toString()
-                    //if the new option matches the task priority mark the option as selected
-                    if ({{products.quantity}} == i.toString())
-            {
-                option.selected = true
-                //add new <option> element to the <select> object
-                quantity.append(option)
-            }
-                </script>
-
-            </select>
-        </fieldset>-->
+      
         <fieldset>
             <label class="control-label col-md-2">Imported: </label>
             {{#if products.imported}}
